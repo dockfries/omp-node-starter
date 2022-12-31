@@ -12,6 +12,7 @@
     "chat_radius": 200.0,
     "death_drop_amount": 0,
     "gravity": 0.00800000037997961,
+    "group_player_objects": false,
     "lag_compensation_mode": 1,
     "map": "",
     "mode": "",
