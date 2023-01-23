@@ -3,8 +3,7 @@
 	Author: YuCarl77
 */
 
-#include <a_samp>
-#include <omp>
+#include <open.mp>
 #include <streamer>
 #include <samp-node>
 
