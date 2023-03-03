@@ -1,6 +1,6 @@
 /*
     A polyfill that makes the string arguments in the existing sa:mp callback function return to the samp-node event as byte arrays.
-	Author: YuCarl77
+	Author: dockfries
 */
 
 #include <open.mp>

@@ -11,12 +11,12 @@
     "gamemode",
     "samp-node"
   ],
-  "homepage": "https://github.com/YuCarl77/omp-node-ts#readme",
+  "homepage": "https://github.com/dockfries/omp-node-ts#readme",
   "bugs": {
-    "url": "https://github.com/YuCarl77/omp-node-ts/issues"
+    "url": "https://github.com/dockfries/omp-node-ts/issues"
   },
   "license": "ISC",
-  "author": "YuCarl77",
+  "author": "dockfries",
   "scripts": {
     "serve": "omp-server",
     "dev": "npm-run-all -p -r -l dev:server dev:watch",

@@ -1,6 +1,6 @@
 # Introduction
 
-A very simple [omp server](https://github.com/openmultiplayer/open.mp/releases) template that based on [samp-node](https://github.com/AmyrAhmady/samp-node) and uses the library [omp-node-lib](https://github.com/yucarl77/omp-node-lib)
+A very simple [omp server](https://github.com/openmultiplayer/open.mp/releases) template that based on [samp-node](https://github.com/AmyrAhmady/samp-node) and uses the library [omp-node-lib](https://github.com/dockfries/omp-node-lib)
 
 ## Features
 
@@ -21,9 +21,9 @@ A very simple [omp server](https://github.com/openmultiplayer/open.mp/releases) 
 
 ```sh
 # clone the project with https
-git clone https://github.com/YuCarl77/omp-node-ts
+git clone https://github.com/dockfries/omp-node-ts
 # or ssh
-git clone git@github.com:YuCarl77/omp-node-ts.git
+git clone git@github.com:dockfries/omp-node-ts.git
 
 # enter the project directory
 cd omp-node-ts
@@ -54,7 +54,7 @@ pnpm serve
 
 ## Notice
 
-- [Why does crash the first time you run it?](https://github.com/YuCarl77/omp-node-ts/issues/12)
+- [Why does crash the first time you run it?](https://github.com/dockfries/omp-node-ts/issues/12)
 - `samp-node` plugin should be executed after other plugins, see `config.json -> pawn.legacy_plugins`
 - `samp-node` requires compliance with the `commonjs` specification and has been converted via `rollup`
 
