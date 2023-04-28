@@ -9,7 +9,15 @@ A very simple [omp server](https://github.com/openmultiplayer/open.mp/releases) 
 - 🎉 i18n support for different charsets depending on the player
 - 💡 better data types and asynchronous support
 
-## Preparation
+## Getting started
+
+### Recommended
+
+```sh
+pnpm create @infernus/app
+```
+
+### Manual
 
 > **The necessary files were removed** to ensure that the latest version is always used and that the repository file size is reduced
 
@@ -17,16 +25,14 @@ A very simple [omp server](https://github.com/openmultiplayer/open.mp/releases) 
 2. Download the [samp-node](https://github.com/AmyrAhmady/samp-node/releases), later put `libnode.so/dll` in the project root directory and `samp-node.so/dll` in the plugins folder
 3. Download the [streamer plugin](https://github.com/samp-incognito/samp-streamer-plugin/releases), later put `streamer.so/dll` in the plugins folder
 
-## Getting started
-
 ```sh
 # clone the project with https
-git clone https://github.com/dockfries/omp-node-starter
+git clone https://github.com/dockfries/infernus-starter
 # or ssh
-git clone git@github.com:dockfries/omp-node-starter.git
+git clone git@github.com:dockfries/infernus-starter.git
 
 # enter the project directory
-cd omp-node-starter
+cd infernus-starter
 
 # install dependency
 pnpm install
@@ -67,4 +73,4 @@ pnpm serve
 
 ## License
 
-[MIT](./LICENSE)
+[MIT](./LICENSE) License © 2022-PRESENT Carl You
