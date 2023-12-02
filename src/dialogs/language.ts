@@ -1,11 +1,9 @@
 import { ColorEnum } from "@/enums/color";
 import { CharsetEnum, LanguageEnum } from "@/enums/language";
 import { $t, locales, localesTitle } from "@/i18n";
-import { MyDialog } from "@/models/dialog";
-import { MyPlayer } from "@/models/player";
-import { DialogStylesEnum } from "@infernus/core";
+import { Dialog, DialogStylesEnum, Player } from "@infernus/core";
 
-export const chooseLanguage = async (p: MyPlayer) => {
+export const chooseLanguage = async (p: Player) => {
   const currLocale = p.locale as LanguageEnum;
 
   const info = Object.values(localesTitle).reduce(
@@ -15,7 +13,7 @@ export const chooseLanguage = async (p: MyPlayer) => {
     ""
   );
 
-  const { listitem: localeIdx } = await new MyDialog({
+  const { listItem: localeIdx } = await new Dialog({
     style: DialogStylesEnum.LIST,
     caption: "Please select the interface language",
     info,
@@ -24,7 +22,7 @@ export const chooseLanguage = async (p: MyPlayer) => {
 
   // windows system use ansi
   const charsets = Object.values(CharsetEnum);
-  const { listitem: charsetIdx } = await new MyDialog({
+  const { listItem: charsetIdx } = await new Dialog({
     style: DialogStylesEnum.LIST,
     caption: "Please select your system's charset",
     info: charsets.reduce(

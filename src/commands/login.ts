@@ -1,19 +1,22 @@
-import { playerEvent } from "@/controller/player";
 import { ColorEnum } from "@/enums/color";
 import { $t } from "@/i18n";
+import { PlayerEvent } from "@infernus/core";
 
-playerEvent.onCommandText(["r", "reg", "register"], (player, ...args) => {
+PlayerEvent.onCommandText(
+  ["r", "reg", "register"],
+  ({ player, subcommand, next }) => {
+    player.sendClientMessage(
+      ColorEnum.White,
+      $t("command.reg", [subcommand], player.locale)
+    );
+    return next();
+  }
+);
+
+PlayerEvent.onCommandText(["l", "login"], ({ player, subcommand, next }) => {
   player.sendClientMessage(
     ColorEnum.White,
-    $t("command.reg", [args], player.locale)
+    $t("command.login", [subcommand], player.locale)
   );
-  return true;
-});
-
-playerEvent.onCommandText(["l", "login"], (player, ...args) => {
-  player.sendClientMessage(
-    ColorEnum.White,
-    $t("command.login", [args], player.locale)
-  );
-  return true;
+  return next();
 });

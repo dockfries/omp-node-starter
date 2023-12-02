@@ -1,11 +1,10 @@
-import { playerEvent } from "@/controller/player";
 import { $t } from "@/i18n";
 import { logger } from "@/logger";
-import { MyDialog } from "@/models/dialog";
-import { DialogStylesEnum } from "@infernus/core";
+import { Dialog, DialogStylesEnum, PlayerEvent } from "@infernus/core";
 
-playerEvent.onCommandText("help", async (player) => {
-  const res = await new MyDialog({
+// middleware supports async callbacks, but it doesn't care about the return value, whether you return true/false/next ()
+PlayerEvent.onCommandText("help", async ({ player, next }) => {
+  const res = await new Dialog({
     style: DialogStylesEnum.MSGBOX,
     caption: $t("dialog.help.caption", null, player.locale),
     info: $t("dialog.help.info", null, player.locale),
@@ -13,5 +12,5 @@ playerEvent.onCommandText("help", async (player) => {
   }).show(player);
 
   logger.info(res);
-  return true;
+  return next();
 });
