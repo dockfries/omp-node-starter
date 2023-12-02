@@ -1,15 +1,15 @@
-import { playerEvent } from "@/controller/player";
 import { ColorEnum } from "@/enums/color";
 import { $t } from "@/i18n";
+import { PlayerEvent } from "@infernus/core";
 
-playerEvent.onCommandText("race", (player, subcommand, ...args) => {
+PlayerEvent.onCommandText("race", ({ player, subcommand, next }) => {
   // subcommand command, means like /race s
-  if (subcommand === "s") {
+  if (subcommand[0] === "s") {
     player.sendClientMessage(
       ColorEnum.White,
-      $t("command.next", [args.toString()], player.locale)
+      $t("command.next", [subcommand.toString()], player.locale)
     );
-    return true;
+    return next();
   }
   return false;
 });

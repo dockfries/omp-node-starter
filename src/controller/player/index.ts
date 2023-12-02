@@ -2,12 +2,9 @@ import { chooseLanguage } from "@/dialogs/language";
 import { ColorEnum } from "@/enums/color";
 import { $t } from "@/i18n";
 import { logger } from "@/logger";
-import { MyPlayer } from "@/models/player";
-import { PlayerEvent, ICmdErr, KeysEnum } from "@infernus/core";
+import { Player, PlayerEvent } from "@infernus/core";
 
-const playerEvent = new PlayerEvent((id) => new MyPlayer(id));
-
-playerEvent.onConnect = async (player: MyPlayer) => {
+PlayerEvent.onConnect(async ({ player, next }) => {
   await chooseLanguage(player);
   player.sendClientMessage(
     ColorEnum.PrimaryBlue,
@@ -29,66 +26,53 @@ playerEvent.onConnect = async (player: MyPlayer) => {
     ColorEnum.White,
     $t("player.rawIp", [player.getRawIp()], player.locale)
   );
-  return true;
-};
+  return next();
+});
 
-playerEvent.onSpawn = (player: MyPlayer) => {
+PlayerEvent.onSpawn(({ player, next }) => {
   player.setPos(1536.8569, -1688.5819, 13.5469);
-  return true;
-};
+  return next();
+});
 
-playerEvent.onDisconnect = function (player: MyPlayer, reason: number) {
-  this.getPlayersArr().forEach((p) => {
+PlayerEvent.onDisconnect(({ player, reason, next }) => {
+  Player.getInstances().forEach((p) => {
     p.sendClientMessage(
       ColorEnum.White,
       $t("player.disconnect", [player.getName(), reason], player.locale)
     );
   });
-  return true;
-};
+  return next();
+});
 
-playerEvent.onCommandError = (
-  player: MyPlayer,
-  command: string,
-  err: ICmdErr
-) => {
+PlayerEvent.onCommandError(({ player, command, error, next }) => {
   player.sendClientMessage(
     ColorEnum.Danger,
-    $t("command.error", [command, err.code, err.msg], player.locale)
+    $t("command.error", [command, error.code, error.msg], player.locale)
   );
+  next();
   return true;
-};
+});
 
-playerEvent.onKeyStateChange = (
-  player: MyPlayer,
-  newkeys: KeysEnum,
-  oldkeys: KeysEnum
-) => {
+PlayerEvent.onKeyStateChange(({ player, newKeys, oldKeys, next }) => {
   player.sendClientMessage(
     ColorEnum.White,
     $t(
       "player.keyStateChange",
-      [player.getName(), Date.now(), newkeys, oldkeys],
+      [player.getName(), Date.now(), newKeys, oldKeys],
       player.locale
     )
   );
-  return true;
-};
+  return next();
+});
 
-playerEvent.onPause = (player: MyPlayer, timestamp: number) => {
-  logger.info($t("player.pause", [player.getName(), timestamp], player.locale));
-  return true;
-};
+PlayerEvent.onPause(({ player, pausedAt, next }) => {
+  logger.info($t("player.pause", [player.getName(), pausedAt], player.locale));
+  return next();
+});
 
-playerEvent.onResume = (player: MyPlayer, pauseMs: number) => {
-  const msg = $t("player.resume", [player.getName(), pauseMs], player.locale);
+PlayerEvent.onResume(({ player, diff, next }) => {
+  const msg = $t("player.resume", [player.getName(), diff], player.locale);
   logger.info(msg);
   player.sendClientMessage(ColorEnum.White, msg);
-  return true;
-};
-
-playerEvent.onText = () => {
-  return true;
-};
-
-export { playerEvent };
+  return next();
+});

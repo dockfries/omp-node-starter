@@ -1,14 +1,14 @@
-import { playerEvent } from "@/controller/player";
 import { chooseLanguage } from "@/dialogs/language";
 import { ColorEnum } from "@/enums/color";
 import { $t } from "@/i18n";
+import { PlayerEvent } from "@infernus/core";
 
-playerEvent.onCommandText(["language", "lang"], (player) => {
+PlayerEvent.onCommandText(["language", "lang"], ({ player, next }) => {
   chooseLanguage(player);
-  return true;
+  return next();
 });
 
-playerEvent.onCommandText("isOfficial", (player) => {
+PlayerEvent.onCommandText("isOfficial", ({ player, next }) => {
   const isOfficial = player.isUsingOfficialClient();
   player.sendClientMessage(
     ColorEnum.White,
@@ -18,5 +18,5 @@ playerEvent.onCommandText("isOfficial", (player) => {
       player.locale
     )
   );
-  return true;
+  return next();
 });

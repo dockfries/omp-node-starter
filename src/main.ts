@@ -3,33 +3,30 @@ import { GameMode } from "@infernus/core";
 import { logger } from "./logger";
 import { $t } from "./i18n";
 import { cone } from "./controller/pickup";
+import "./controller/player";
 
-const gm = new GameMode();
-
-gm.onInit = () => {
+GameMode.onInit(({ next }) => {
   cone.create();
   logger.info($t("server.running"));
-};
+  return next();
+});
 
-gm.onExit = () => {
+GameMode.onExit(({ next }) => {
   logger.info($t("server.exit"));
-};
+  return next();
+});
 
-gm.onIncomingConnection = (
-  playerid: number,
-  ipAddress: string,
-  port: number
-) => {
-  logger.info($t("server.incoming", [playerid, ipAddress, port]));
-  return true;
-};
+GameMode.onIncomingConnection(({ next, playerId, ipAddress, port }) => {
+  logger.info($t("server.incoming", [playerId, ipAddress, port]));
+  return next();
+});
 
-gm.onRconCommand = (cmd: string) => {
+GameMode.onRconCommand(({ cmd, next }) => {
   logger.info($t("server.rcon.command", [cmd]));
-  return true;
-};
+  return next();
+});
 
-gm.onRconLoginAttempt = (ip: string, password: string, success: boolean) => {
+GameMode.onRconLoginAttempt(({ ip, password, success, next }) => {
   logger.info($t("server.rcon.attempt", [ip, password, success]));
-  return true;
-};
+  return next();
+});
