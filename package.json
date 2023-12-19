@@ -2,7 +2,6 @@
   "name": "omp-server",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "description": "A very simple omp server template that uses the samp-node plugin and the @infernus/core library.",
   "keywords": [
     "sa-mp",
