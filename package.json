@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@infernus/core": "^0.10.0-beta.11",
+    "@infernus/core": "^0.11.0-beta.6",
     "pino": "^8.18.0",
     "pino-pretty": "^10.3.1"
   },
