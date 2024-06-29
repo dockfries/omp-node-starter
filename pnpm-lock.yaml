@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@infernus/core':
-        specifier: ^0.11.0-beta.6
-        version: 0.11.0-beta.6(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
+        specifier: 0.11.0-beta.7
+        version: 0.11.0-beta.7(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
       pino:
         specifier: ^8.18.0
         version: 8.18.0
@@ -249,11 +249,11 @@ packages:
   '@humanwhocodes/object-schema@2.0.1':
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
 
-  '@infernus/core@0.11.0-beta.6':
-    resolution: {integrity: sha512-VDCU/yjX5Shlvy/YlALwRnvsC0zVnj1vUjOvpwP0aYJBm/VYo12KC1necUM5YjteELp+Vo8PPw6HKF5ues2f4w==}
+  '@infernus/core@0.11.0-beta.7':
+    resolution: {integrity: sha512-4L1sAdbqg1xRuUg1/oATWmJucbFptMvodiGY5WOrMTNOuk2QSQEH8Es7Xo+zlnMyEqFH/y9sYS4TtXLtQrCOhg==}
 
-  '@infernus/streamer@0.11.0':
-    resolution: {integrity: sha512-7ttZq1D2wn6yn3yedcRE/xdt5rJM40YaQzMZfNBUBgLk/fHHufjWjnlaz9c2C99/tYsBMNC/9T8KYGKUH27zsw==}
+  '@infernus/streamer@0.11.1':
+    resolution: {integrity: sha512-3Njk3RSPF5YrrqjEUML7zjCe2bEULeGt2/mYTotJVeyoWX8MLBSIaqpGLGDenGwAQ8E0710THs2CRLCAxbT1dw==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -394,8 +394,8 @@ packages:
   '@types/lodash-es@4.17.12':
     resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
 
-  '@types/lodash@4.17.4':
-    resolution: {integrity: sha512-wYCP26ZLxaT3R39kiN2+HcJ4kTd3U1waI/cY7ivWYqFP6pW3ZNpvi6Wd6PHZx7T/t8z0vlkXMg3QYLa7DZ/IJQ==}
+  '@types/lodash@4.17.6':
+    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
 
   '@types/node@20.11.16':
     resolution: {integrity: sha512-gKb0enTmRCzXSSUJDq6/sPcqrfCv2mkkG6Jt/clpn5eiCbKTY+SgZUxo+p8ZKMof5dCp9vHQUAB7wOUTod22wQ==}
@@ -1681,9 +1681,9 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.1': {}
 
-  '@infernus/core@0.11.0-beta.6(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)':
+  '@infernus/core@0.11.0-beta.7(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)':
     dependencies:
-      '@infernus/streamer': 0.11.0
+      '@infernus/streamer': 0.11.1
       iconv-lite: 0.6.3
       lodash-unified: 1.0.3(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
       pino: 8.18.0
@@ -1693,7 +1693,7 @@ snapshots:
       - lodash
       - lodash-es
 
-  '@infernus/streamer@0.11.0': {}
+  '@infernus/streamer@0.11.1': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -1806,9 +1806,9 @@ snapshots:
 
   '@types/lodash-es@4.17.12':
     dependencies:
-      '@types/lodash': 4.17.4
+      '@types/lodash': 4.17.6
 
-  '@types/lodash@4.17.4': {}
+  '@types/lodash@4.17.6': {}
 
   '@types/node@20.11.16':
     dependencies:
