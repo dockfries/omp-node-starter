@@ -18,19 +18,14 @@
   "license": "ISC",
   "author": "dockfries",
   "scripts": {
-    "serve": "omp-server",
+    "serve": "pnpm exec ./omp-server",
     "dev": "npm-run-all -p -r -l dev:server dev:watch",
     "dev:watch": "cross-env NODE_ENV=dev rollup -c -w",
-    "dev:server": "nodemon -x omp-server -w dist/bundle.js -d 2",
-    "build": "npm run clean && cross-env NODE_ENV=prod rollup -c",
+    "dev:server": "nodemon -x \"pnpm serve\" -I -w dist/bundle.js -d 2",
+    "build": "pnpm clean && cross-env NODE_ENV=prod rollup -c",
     "clean": "rimraf dist",
     "lint": "eslint src/* --fix -c .eslintrc",
     "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
   },
   "dependencies": {
     "@infernus/core": "^0.11.0-beta.10",
