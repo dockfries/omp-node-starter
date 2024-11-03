@@ -14,15 +14,19 @@ export const logger = pino({
       {
         target: "pino-roll",
         options: {
-          file: join("logs", 'log'),
+          file: join("logs", "log"),
           mkdir: true,
           frequency: "daily",
           limit: {
-            count: 3
+            count: 3,
           },
-          dateFormat: 'yyyy-MM-dd'
+          dateFormat: "yyyy-MM-dd",
         },
       },
     ],
   },
+});
+
+process.on("uncaughtException", (err) => {
+  logger.error(err);
 });

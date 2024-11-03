@@ -27,7 +27,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@infernus/core": "^0.11.0-beta.13",
+    "@infernus/core": "^0.11.1",
     "pino": "^9.5.0",
     "pino-pretty": "^11.3.0",
     "pino-roll": "^2.2.0"
