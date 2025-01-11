@@ -2,6 +2,7 @@
   "dependencies": {
     "dockfries/samp-node": "2.3.1",
     "samp-incognito/samp-streamer-plugin": "^2.9.6",
-    "openmultiplayer/open.mp": "*"
+    "openmultiplayer/open.mp": "*",
+    "katursis/Pawn.RakNet": "^1.6.0-omp"
   }
 }

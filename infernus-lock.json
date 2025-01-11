@@ -9,6 +9,10 @@
     },
     "samp-incognito/samp-streamer-plugin": {
       "version": "v2.9.6"
+    },
+    "katursis/Pawn.RakNet": {
+      "version": "1.6.0-omp",
+      "component": true
     }
   }
 }

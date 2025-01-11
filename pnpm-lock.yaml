@@ -121,6 +121,11 @@ packages:
   '@infernus/core@0.11.4':
     resolution: {integrity: sha512-Jm+We/SQM9rZeFvqw9MK0wEUiwSq+2+yNJatIHjg2ARXwhxpTxviPiBSIGiwSOXAzx6tDOqp7xkliSItV6Axwg==}
 
+  '@infernus/raknet@0.11.1':
+    resolution: {integrity: sha512-p+UWQ/yPHqEurNyR1T0et/InYE7ouAs+S7W4QHmOY8lK0wVvXbKaLpVsihoyzQRKtGW0AOd5EtU86rahogsq/g==}
+    peerDependencies:
+      '@infernus/core': ^0.11.0-beta.11
+
   '@infernus/streamer@0.11.2':
     resolution: {integrity: sha512-4PtR6cGZgtNhziC8P/ykkr/HOIPgo6WbNchHRwDJ4tPpsuJx1LAbKO3S0sRYtadQiddfrMGjvwrxY9HzIx2nxw==}
 
@@ -1296,6 +1301,10 @@ snapshots:
       - '@types/lodash-es'
       - lodash
       - lodash-es
+
+  '@infernus/raknet@0.11.1(@infernus/core@0.11.0-beta.11(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21))':
+    dependencies:
+      '@infernus/core': 0.11.0-beta.11(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
 
   '@infernus/streamer@0.11.2': {}
 

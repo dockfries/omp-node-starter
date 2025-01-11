@@ -1,9 +1,33 @@
-import "./commands";
 import { GameMode } from "@infernus/core";
+import {
+  onIncomingPacket,
+  onIncomingRPC,
+  onOutgoingPacket,
+  onOutgoingRPC,
+} from "@infernus/raknet";
+import "./commands";
 import { logger } from "./logger";
 import { $t } from "./i18n";
 import { cone } from "./controller/pickup";
 import "./controller/player";
+
+// raknet callbacks
+// if you do not register, it will block all rpc and packets
+onIncomingPacket(({ next }) => {
+  return next();
+});
+
+onIncomingRPC(({ next }) => {
+  return next();
+});
+
+onOutgoingPacket(({ next }) => {
+  return next();
+});
+
+onOutgoingRPC(({ next }) => {
+  return next();
+});
 
 GameMode.onInit(({ next }) => {
   cone.create();

@@ -91,7 +91,7 @@
   "password": "",
   "pawn": {
     "legacy_plugins": ["streamer", "samp-node"],
-    "main_scripts": ["polyfill 1"],
+    "main_scripts": ["polyfill_raknet 1"],
     "side_scripts": []
   },
   "rcon": {
