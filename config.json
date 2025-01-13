@@ -60,6 +60,7 @@
     "use_prefix": true,
     "use_timestamp": true
   },
+  "logo": "",
   "max_bots": 0,
   "max_players": 50,
   "name": "open.mp server",
@@ -86,7 +87,8 @@
     "stream_radius": 200.0,
     "stream_rate": 1000,
     "time_sync_rate": 30000,
-    "use_lan_mode": false
+    "use_lan_mode": false,
+    "use_omp_encryption": false
   },
   "password": "",
   "pawn": {
